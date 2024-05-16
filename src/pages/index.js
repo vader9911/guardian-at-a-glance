@@ -2,7 +2,7 @@
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Button, Box, Text } from '@chakra-ui/react';
 import UserStats from '@components/UserStats'; // Ensure the path matches your jsconfig.json
-
+import WeaponsPage from '@components/weapons';
 export default function HomePage() {
   const { data: session, status } = useSession();
 
@@ -19,6 +19,7 @@ export default function HomePage() {
           </Button>
           <Text mt={4}>Signed in as {session?.user?.name}</Text>
           <UserStats />
+          <WeaponsPage />
         </Box>
       )}
     </Box>
